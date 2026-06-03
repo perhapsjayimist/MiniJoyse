@@ -1,4 +1,8 @@
 # 𝓜𝓲𝓷𝓲𝓙𝓸𝔂𝓼𝓮 - 𝕧𝟘.𝟙.𝟘
+# LADIES AND GENTLEMEN:
+Make a python virtual environment `python -m venv venv`
+Activate it and run this to install the packages:
+`pip install rich` I guess thats all 🤷‍♂️
 ## What is it?
 MiniJoyse is a line-based DSL according to ChatGPT, built in Python made by [perhapsjayimist](https://github.com/perhapsjayimist)
 you can also check out the repo [here](https://github.com/perhapsjayimist/MiniJoyse/)
