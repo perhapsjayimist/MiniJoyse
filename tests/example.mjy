@@ -1,0 +1,6 @@
+# This is the MiniJoyse Language!
+# This is an comment, anything after stops running.
+
+print Hello World! # Soon I suspect it to be print "Hello World!" with damn var types
+some_func abc def # Multi args
+asd <- this brings an error, but we can skip that :)
