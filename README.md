@@ -1,4 +1,4 @@
-# 𝓜𝓲𝓷𝓲𝓙𝓸𝔂𝓼𝓮 - 𝕧𝟘.𝟙.𝟘
+# 𝓜𝓲𝓷𝓲𝓙𝓸𝔂𝓼𝓮 - 𝕧𝟘.𝟙.𝟙
 # LADIES AND GENTLEMEN:
 Make a python virtual environment `python -m venv venv`
 Activate it and run this to install the packages:
