@@ -10,15 +10,18 @@ class Lexer:
 	def match_char(self, match: str):
 		return self.get_char() == match
 
+	def advance(self):
+		self.pos += 1
+
 	def read_str(self, quot):
 		start = self.pos
-		self.pos += 1  # skip opening quote
+		self.advance()  # skip opening quote
 
 		while self.pos < len(self.text) and not self.match_char(quot):
-			self.pos += 1
+			self.advance()
 
 		value = self.text[start + 1:self.pos]  # exclude quotes
-		self.pos += 1  # skip closing quote
+		self.advance()  # skip closing quote
 
 		self.tokens.append(("STR", value))
 
@@ -28,11 +31,11 @@ class Lexer:
 		if not (self.get_char().isalpha() or self.match_char("_")):
 			return
 
-		self.pos += 1
+		self.advance()
 
 		while self.pos < len(self.text):
 			if self.get_char().isalnum() or self.match_char("_"):
-				self.pos += 1
+				self.advance()
 			else:
 				break
 
@@ -41,15 +44,15 @@ class Lexer:
 
 	def read_eol(self):
 		self.tokens.append(("EOL", None))
-		self.pos += 1
+		self.advance()
 
 	# def read_separator(self):
 	# 	self.tokens.append(("SEP", None))
-	# 	self.pos += 1
+	# 	self.advance()
 
 	def read_comment(self):
 		while self.pos < len(self.text) and not self.match_char("\n"):
-			self.pos += 1
+			self.advance()
 
 	def process(self) -> list[tuple]:
 		while self.pos < len(self.text):
@@ -72,7 +75,7 @@ class Lexer:
 				continue
 
 			elif char == " ":
-				self.pos += 1
+				self.advance()
 				continue
 
 			elif char.isalpha():
@@ -80,6 +83,8 @@ class Lexer:
 				continue
 
 			else:
-				self.pos += 1
+				self.advance()
+
+		self.read_eol()
 
 		return self.tokens
